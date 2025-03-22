@@ -6,8 +6,8 @@ namespace empresa{
 
     const campoCodigo = document.getElementById("campoCodigo") as HTMLInputElement;
 
-    const btnDeposito = document.getElementById("deposito") as HTMLButtonElement;
-
+    const btnDeposito = document.getElementById("btnDeposito") as HTMLButtonElement;
+    
     const campoDeposito = document.getElementById("campoDeposito") as HTMLInputElement;
 
     let p: Cliente;
@@ -16,9 +16,11 @@ namespace empresa{
     const btnComprar = document.getElementById("comprar") as HTMLButtonElement;
 
     calc.addEventListener("click", ()=>{
-        let p = new Pessoa();
+        p = new Cliente(parseInt(campoCodigo.value));
         p.nome = campoNome.value;
         p.anoNasc = parseInt(campoAno.value);
+
+        
 
         document.getElementById("nome").textContent = p.nome;
         document.getElementById("ano").textContent = p.anoNasc.toString();

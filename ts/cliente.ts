@@ -1,28 +1,29 @@
 namespace empresa{
     export class Cliente extends Pessoa{
-        private_codigo:number;
-        private_saldo:number = 0;
+        private _codigo:number;
+        private _saldo:number = 0;
 
         constructor(codigo:number){
             super();
-            this.codigo = codigo;
+            this._codigo = codigo;
         }
 
         get codigo(){
-            return this.codigo;
+            return this._codigo;
         }
 
         get saldo(){
-            return this.saldo;
+            return this._saldo;
         }
 
         public deposita (valor:number){
-            this.saldo += valor;
+            this._saldo += valor;
         }
 
         public comprar (valorCompra:number):boolean{
-            if(this.saldo >= valorCompra){
-                this.saldo = this.saldo - valorCompra;
+            if(this._saldo >= valorCompra){
+                this._saldo = this._saldo - valorCompra;
+                //this_saldo -= valorCompra;
                 return true;
             }else{
                 return false;

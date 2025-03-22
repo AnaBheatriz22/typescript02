@@ -4,21 +4,22 @@ var empresa;
     class Cliente extends empresa.Pessoa {
         constructor(codigo) {
             super();
-            this.private_saldo = 0;
-            this.codigo = codigo;
+            this._saldo = 0;
+            this._codigo = codigo;
         }
         get codigo() {
-            return this.codigo;
+            return this._codigo;
         }
         get saldo() {
-            return this.saldo;
+            return this._saldo;
         }
         deposita(valor) {
-            this.saldo += valor;
+            this._saldo += valor;
         }
         comprar(valorCompra) {
-            if (this.saldo >= valorCompra) {
-                this.saldo = this.saldo - valorCompra;
+            if (this._saldo >= valorCompra) {
+                this._saldo = this._saldo - valorCompra;
+                //this_saldo -= valorCompra;
                 return true;
             }
             else {
